@@ -227,7 +227,7 @@ public abstract class AbstractChatHandler {
         server.getPluginManager().callEvent(spyEvent);
 
         if (!spyEvent.isCancelled()) {
-            final String legacyString = AdventureUtil.miniToLegacy(String.format(spyEvent.getFormat(), AdventureUtil.legacyToMini(user.getDisplayName()), AdventureUtil.escapeTags(spyEvent.getMessage())));
+            final String legacyString = AdventureUtil.miniToLegacy(String.format(spyEvent.getFormat(), AdventureUtil.legacyToMini(user.getDisplayName()), AdventureUtil.legacyToMini(spyEvent.getMessage())));
 
             for (final Player onlinePlayer : spyEvent.getRecipients()) {
                 onlinePlayer.sendMessage(legacyString);
